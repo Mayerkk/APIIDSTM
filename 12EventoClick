@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
+        </canvas>
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            canvas.addEventListener("click", (e) => {console.log("hola papu");
+            console.log(e);
+            ctx.beginPath();
+            ctx.arc(e.layerX,e.layerY,50,0,2*Math.PI);
+            ctx.fillStyle="rgba(50,249,228,0.5)";
+            ctx.fill();
+            ctx.stroke();
+        });
+        </script>
+    </body>
+</html>

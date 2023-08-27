@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border: 1px solid grey;"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const context = canvas.getContext("2d");
+        
+
+        context.beginPath();
+        context.fillStyle = "gray";
+        context.rect(0,0,500,500);
+        context.fill();
+
+        let rgb = "rgb(253, 255, 205)";
+
+        context.beginPath();
+        context.fillStyle = rgb;
+        context.rect(180,220,25,100);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = rgb;
+        context.rect(294,220,25,100);
+        context.fill();
+    
+        context.beginPath();
+        context.fillStyle = "green";
+        context.rect(200,200,100,200);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "blue";
+        context.rect(200,340,100,150);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = rgb;
+        context.arc(250,150,50,50,0, 2 * Math.PI);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "green";
+        context.arc(200,220,20,50,0, 2 * Math.PI);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "green";
+        context.arc(300,220,20,50,0, 2 * Math.PI);
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(250, 390);
+        context.lineTo(250, 490);
+        context.lineWidth = 3;
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = "white";
+        context.arc(230,140,14,10,0, 2 * Math.PI);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = "white";
+        context.arc(270,140,14,10,0, 2 * Math.PI);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = "black";
+        context.arc(250,180,8,10,0, 2 * Math.PI);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(250,182,5,10,0, 2 * Math.PI);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "black";
+        context.arc(230,140,5,10,0, 2 * Math.PI);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "black";
+        context.arc(270,140,5,10,0, 2 * Math.PI);
+        context.fill();
+
+    </script>
+</body>
+</html>

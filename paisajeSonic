@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Paisaje Sonic</title>
+      <style>
+         canvas {
+         border: 1px solid black;
+         }
+      </style>
+   </head>
+   <body>
+      <canvas id="sonicCanvas" width="800" height="400"></canvas>
+      <img id="miImagen" src="tierra.jpg" style="display: none;">
+      <img id="miImagen2" src="palmera2.png" style="display: none;">
+      <script>
+         const canvas = document.getElementById('sonicCanvas');
+         const ctx = canvas.getContext('2d');
+         
+         const imagen = document.getElementById('miImagen');
+         const imagen2 = document.getElementById('miImagen2');
+         
+         imagen.onload = function() {
+             ctx.fillStyle = 'lightblue';
+             ctx.fillRect(0, 0, canvas.width, canvas.height);
+         
+             ctx.beginPath();
+             ctx.arc(100, 100, 50, 0, Math.PI * 2);
+             ctx.fillStyle = 'yellow';
+             ctx.fill();
+         
+             ctx.drawImage(imagen, 0, 0, canvas.width, 280, 0, 280, canvas.width, 300);
+         
+             function drawCloud(x, y) {
+                 ctx.beginPath();
+                 ctx.arc(x, y, 20, 0, Math.PI * 2);
+                 ctx.arc(x + 30, y, 25, 0, Math.PI * 2);
+                 ctx.arc(x + 60, y, 20, 0, Math.PI * 2);
+                 ctx.fillStyle = 'white';
+                 ctx.fill();
+             }
+         
+             drawCloud(100, 80);
+             drawCloud(400, 50);
+             //ANILLOS
+             function drawCircle(x, y) {
+                 ctx.beginPath();
+                 ctx.arc(x, y, 30, 0, Math.PI * 2);
+                 ctx.fillStyle = 'yellow';
+                 ctx.fill();
+         
+                 ctx.beginPath();
+                 ctx.arc(x, y, 25, 0, Math.PI * 2);
+                 ctx.fillStyle = 'lightblue';
+                 ctx.fill();
+                 
+             }
+             drawCircle(200, 240);
+             drawCircle(300, 240);
+             drawCircle(400, 240);
+         
+             function drawPalmTree() {
+                 ctx.drawImage(imagen2, 0, 0, imagen2.width, imagen2.height, 480, 150, 100, 140);
+                 ctx.fillstroke();
+             }
+             function drawFlor(x, y) {
+         ctx.beginPath();
+         ctx.moveTo(x, y);
+         ctx.lineTo(x, y - 40);
+         ctx.strokeStyle = 'green';
+         ctx.lineWidth = 5;
+         ctx.stroke();
+         
+         ctx.beginPath();
+         ctx.arc(x - 10, y - 45, 10, 0, Math.PI * 2);
+         ctx.fillStyle = 'red';
+         ctx.fill();
+         
+         ctx.beginPath();
+         ctx.arc(x + 10, y - 45, 10, 0, Math.PI * 2);
+         ctx.fill();
+         
+         ctx.beginPath();
+         ctx.arc(x, y - 45, 5, 0, Math.PI * 2);
+         ctx.fillStyle = 'yellow';
+         ctx.fill();
+         }
+         drawFlor(700, 280);
+             drawPalmTree();
+         };
+      </script>
+   </body>
+</html>
